@@ -1,0 +1,47 @@
+{
+  "name": "eggd_canrisk_workflow_v1.0.0",
+  "title": "eggd_canrisk_workflow_v1.0.0",
+  "stages": [
+    {
+      "id": "stage-sentieon_bam_to_vcf",
+      "executable": "app-sentieon-dnabam/4.2.1",
+      "input": {
+        "genome_fastagz": {
+          "$dnanexus_link": {
+            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
+            "id": "file-F403K904F30y2vpVFqxB9kz7"
+          }
+        },
+        "gatk_resource_bundle": {
+          "$dnanexus_link": {
+            "project": "project-F3zqGV04fXX5j7566869fjFq",
+            "id": "file-F3zx7gj4fXX8QG3Q42BzpyZJ"
+          }
+        },
+        "targets_bed": [
+          {
+            "$dnanexus_link": "file-GVv89yj4xVgfPgj6xq48q5Z7"
+          }
+        ],
+        "output_gvcf": true,
+        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all",
+        "gvcftyper_algo_options": "--call_conf 10 --emit_conf 10 --emit_mode all"
+      }
+    },
+    {
+      "id": "stage-canrisk_vcf_app",
+      "executable": "app-eggd_CANRISK_vcf/1.0.0",
+      "input": {
+        "sample_vcf": {
+          "$dnanexus_link": {
+            "stage": "stage-sentieon_bam_to_vcf",
+            "outputField": "variants_vcf"
+          }
+        },
+        "PRS_variants": {
+          "$dnanexus_link": "file-GV4ZVJQ4pkj7KJk6KgFJy63y"
+        }
+      }
+    }
+  ]
+}
