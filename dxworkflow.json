@@ -4,8 +4,8 @@
   "summary": "Main workflow for CANRISK PRS processing",
   "stages": [
     {
-      "id": "stage-sentieon_dnabam",
-      "executable": "app-sentieon-dnabam/4.2.1",
+      "id": "stage-sentieon_dnaseq",
+      "executable": "app-sentieon-dnaseq/4.2.1",
       "input": {
         "genome_fastagz": {
           "$dnanexus_link": {
@@ -24,18 +24,26 @@
             "$dnanexus_link": "file-GVv89yj4xVgfPgj6xq48q5Z7"
           }
         ],
+        "genomebwaindex_targz": {
+          "$dnanexus_link": {
+            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
+            "id": "file-F404y604F30fbxQG68KF3GZb"
+          }
+        },
         "output_gvcf": true,
+        "output_bam": "none",
+        "mark_or_remove_duplicates": "none",
         "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all",
         "gvcftyper_algo_options": "--call_conf 10 --emit_conf 10 --emit_mode all"
       }
     },
     {
-      "id": "stage-canrisk_vcf_app",
+      "id": "stage-canrisk_vcf",
       "executable": "app-eggd_CANRISK_vcf/1.0.0",
       "input": {
         "sample_vcf": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_dnabam",
+            "stage": "stage-sentieon_dnaseq",
             "outputField": "variants_vcf"
           }
         },
