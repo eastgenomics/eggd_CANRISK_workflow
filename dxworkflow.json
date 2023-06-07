@@ -1,9 +1,10 @@
 {
   "name": "eggd_canrisk_workflow_v1.0.0",
   "title": "eggd_canrisk_workflow_v1.0.0",
+  "summary": "Main workflow for CANRISK PRS processing",
   "stages": [
     {
-      "id": "stage-sentieon_bam_to_vcf",
+      "id": "stage-sentieon_dnabam",
       "executable": "app-sentieon-dnabam/4.2.1",
       "input": {
         "genome_fastagz": {
@@ -34,7 +35,7 @@
       "input": {
         "sample_vcf": {
           "$dnanexus_link": {
-            "stage": "stage-sentieon_bam_to_vcf",
+            "stage": "stage-sentieon_dnabam",
             "outputField": "variants_vcf"
           }
         },
