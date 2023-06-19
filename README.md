@@ -1,13 +1,13 @@
 # eggd_CANRISK_workflow
 workflow definition for CANRISK
-
+Includes variant calling against specified set of PRS variants (genotyping) and additional checks and VCF modifications to provide an output compatible with the CANRISK tool.
 
 -------
 ## Current Version: 1.0.0
 
 ## Release Notes:
 
-Workflow built with GRCH37
+Workflow built for GRCH37, using the EGLH-CEN_303_PRS variant set.
 
 ## What apps are used in this workflow?
 
