@@ -1,45 +1,49 @@
 {
   "name": "eggd_canrisk_workflow_v1.0.0",
   "title": "eggd_canrisk_workflow_v1.0.0",
-  "summary": "Main workflow for CANRISK PRS processing",
+  "summary": "Main workflow for generating and processing PRS genotyping VCF for CanRisk",
   "stages": [
     {
       "id": "stage-sentieon_dnaseq",
       "executable": "app-sentieon-dnaseq/4.2.1",
       "input": {
-        "genome_fastagz": {
-          "$dnanexus_link": {
-            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
-            "id": "file-F403K904F30y2vpVFqxB9kz7"
-          }
-        },
         "gatk_resource_bundle": {
           "$dnanexus_link": {
             "project": "project-F3zqGV04fXX5j7566869fjFq",
             "id": "file-F3zx7gj4fXX8QG3Q42BzpyZJ"
           }
         },
-        "targets_bed": [
-          {
-            "$dnanexus_link": "file-GVv89yj4xVgfPgj6xq48q5Z7"
+        "genome_fastagz": {
+          "$dnanexus_link": {
+            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
+            "id": "file-F403K904F30y2vpVFqxB9kz7"
           }
-        ],
+        },
         "genomebwaindex_targz": {
           "$dnanexus_link": {
             "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
             "id": "file-F404y604F30fbxQG68KF3GZb"
           }
         },
-        "output_gvcf": true,
+        "in_files": [
+          {
+            "$dnanexus_link": "file-GX5b6vQ4xVgq7K7ZbgFBGG1f"
+          },
+          {
+            "$dnanexus_link": "file-GX5b6x04xVgp22z81139g3P4"
+          }
+        ],
         "output_bam": "none",
-        "mark_or_remove_duplicate": "none",
-        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all",
-        "gvcftyper_algo_options": "--call_conf 10 --emit_conf 10 --emit_mode all"
+        "output_gvcf": false,
+        "output_metrics": false,
+        "output_md5sum": false,
+        "germline_algo": "Haplotyper",
+        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all --given EGLH-CEN_303_PRS.vcf.gz"
       }
     },
     {
       "id": "stage-canrisk_vcf",
-      "executable": "app-eggd_CANRISK_vcf/1.0.0",
+      "executable": "app-eggd_canrisk_vcf/1.0.0",
       "input": {
         "sample_vcf": {
           "$dnanexus_link": {
@@ -47,15 +51,8 @@
             "outputField": "variants_vcf"
           }
         },
-        "PRS_variants": {
-          "$dnanexus_link": "file-GV4ZVJQ4pkj7KJk6KgFJy63y"
-        },
-        "reference_fasta": {
-          "$dnanexus_link": {
-            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
-            "id": "file-F403K904F30y2vpVFqxB9kz7"
-          }
-        }
+        "depth": "20",
+        "exclude": false
       }
     }
   ]
