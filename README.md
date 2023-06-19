@@ -14,7 +14,7 @@ Workflow built for GRCH37, using the EGLH-CEN_303_PRS variant set.
 |  App 	| Version  	|
 |---	|---	|
 |sentieon-dnabam     |4.2.1|
-|eggd_CANRISK_vcf    |1.0.0|
+|eggd_canrisk_vcf    |1.0.0|
 
 
 
