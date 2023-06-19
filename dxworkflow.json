@@ -38,7 +38,7 @@
         "output_metrics": false,
         "output_md5sum": false,
         "germline_algo": "Haplotyper",
-        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all --given EGLH-CEN_303_PRS.vcf.gz"
+        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all --given EGLH-CEN_303_PRS_GRCh37.vcf.gz"
       }
     },
     {
