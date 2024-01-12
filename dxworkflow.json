@@ -1,6 +1,6 @@
 {
-  "name": "eggd_canrisk_workflow_v1.0.0",
-  "title": "eggd_canrisk_workflow_v1.0.0",
+  "name": "eggd_canrisk_workflow_v1.1.0",
+  "title": "eggd_canrisk_workflow_v1.1.0",
   "summary": "Main workflow for generating and processing PRS genotyping VCF for CanRisk",
   "stages": [
     {
@@ -27,10 +27,10 @@
         },
         "in_files": [
           {
-            "$dnanexus_link": "file-GX5b6vQ4xVgq7K7ZbgFBGG1f"
+            "$dnanexus_link": "file-GfPy7g845bYkVVY6VXBBjBjq"
           },
           {
-            "$dnanexus_link": "file-GX5b6x04xVgp22z81139g3P4"
+            "$dnanexus_link": "file-GfPy7x845bYj9kV9Qvj3kfV5"
           }
         ],
         "output_bam": "none",
@@ -38,7 +38,7 @@
         "output_metrics": false,
         "output_md5sum": false,
         "germline_algo": "Haplotyper",
-        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all --given EGLH-CEN_303_PRS_GRCh37.vcf.gz"
+        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all --given EGLH-CEN_301_PRS_GRCh37.vcf.gz"
       }
     },
     {
