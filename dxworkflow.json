@@ -28,10 +28,16 @@
         },
         "in_files": [
           {
-            "$dnanexus_link": "file-Gk87XXQ4VxyjfFVJP6qYYG39"
+            "$dnanexus_link": {
+              "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+              "id": "file-Gk87XXQ4VxyjfFVJP6qYYG39"
+            }
           },
           {
-            "$dnanexus_link": "file-Gk87XY04VxyYBzZFYPJQq4bk"
+            "$dnanexus_link": {
+              "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+              "id": "file-Gk87XY04VxyYBzZFYPJQq4bk"
+            }
           }
         ],
         "output_bam": "none",
