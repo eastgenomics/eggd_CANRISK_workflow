@@ -1,8 +1,8 @@
 {
-  "name": "eggd_canrisk_workflow_v1.2.0",
-  "title": "eggd_canrisk_workflow_v1.2.0",
+  "name": "eggd_canrisk_workflow_v1.3.0",
+  "title": "eggd_canrisk_workflow_v1.3.0",
   "summary": "Main workflow for generating and processing PRS genotyping VCF for CanRisk",
-  "whatsNew": "Sentieon updated to v4.2.2 and vcf file inputs updated to use EGLH-CEN_301_OC_EGLH-CEN_34_PRS_GRCh37_combined.vcf.gz",
+  "whatsNew": "eggd_canrisk_vcf updated to v1.1.0",
   "stages": [
     {
       "id": "stage-sentieon_dnaseq",
@@ -50,7 +50,7 @@
     },
     {
       "id": "stage-canrisk_vcf",
-      "executable": "app-eggd_canrisk_vcf/1.0.0",
+      "executable": "app-eggd_canrisk_vcf/1.1.0",
       "input": {
         "sample_vcf": {
           "$dnanexus_link": {
