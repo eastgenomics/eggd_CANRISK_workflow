@@ -63,8 +63,7 @@
             "outputField": "variants_vcf"
           }
         },
-        "depth": "20",
-        "exclude": false
+        "depth": "20"
       }
     }
   ]
