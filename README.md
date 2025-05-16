@@ -3,7 +3,7 @@ workflow definition for CANRISK
 Includes variant calling against specified set of PRS variants (genotyping) and additional checks and VCF modifications to provide an output compatible with the CANRISK tool.
 
 -------
-## Current Version: 1.3.1
+## Current Version: 1.3.2
 
 ## Release Notes:
 
@@ -13,7 +13,7 @@ Workflow built for GRCh37, using the EGLH-CEN_301_PRS and OC_EGLH-CEN_34_PRS com
 
 |  App 	| Version  	|
 |---	|---	|
-|sentieon-dnaseq     |4.2.2|
+|sentieon-dnaseq     |5.1.0|
 |eggd_canrisk_vcf    |1.1.1|
 
 
